@@ -10,7 +10,7 @@ public class Main {
         //Set - zbiór elementy nie bedą się powtarzać
         //w zbiorze elementy nie są indeksowane
         Set<Integer> wylosowane = new HashSet<>();
-        for(int i = 0 ; i<6;i++){
+      while(wylosowane.size()<6){
             wylosowane.add((int)(Math.random()*10));
         }
         System.out.println("wylosowane:"+wylosowane);
