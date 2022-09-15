@@ -11,16 +11,19 @@ public class Main {
         wpisane = wpisanieLiczb();
         System.out.println("Wpisane "+wpisane);
 
-        //zapis listy która będzie zawierala elementy
-        // ktore powtarzają się w wpisane i wylosowane
+        List<Integer> trafione =new LinkedList<>();
+        trafione = podsumowanie(wylosowane,wpisane);
+        System.out.println("Trafione" + trafione);
+
+    }
+    public static List<Integer> podsumowanie(Set<Integer> wylosowane, List<Integer>wpisane){
         List<Integer> trafione =new LinkedList<>();
         for(Integer wpisanaWartosc : wpisane){
             if(wylosowane.contains(wpisanaWartosc)){
                 trafione.add(wpisanaWartosc);
             }
         }
-        System.out.println("Trafione" + trafione);
-
+        return trafione;
     }
     public static Set<Integer> losowanieLiczb(int n){
         Set<Integer> wylosowane  = new HashSet<>();
