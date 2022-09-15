@@ -10,13 +10,15 @@ public class Main {
         //w zbiorze elementy nie są indeksowane
         Set<Integer> wylosowane = new HashSet<>();
       while(wylosowane.size()<6){
-            wylosowane.add((int)(Math.random()*10));
+            wylosowane.add((int)(Math.random()*100+1));
         }
-        System.out.println("wylosowane:"+wylosowane);
+        //System.out.println("wylosowane:"+wylosowane);
 
       //wczytywanie z klawiatury 6 liczb
         Scanner klawiatura = new Scanner(System.in);
         List<Integer> wpisane = new ArrayList<>();
+        //lista elementy mogą się powtarzać
+        //lista ma indeksowane elementy
         System.out.println("Podaj 6 liczb");
         for(int i=0;i<6;i++){
             System.out.println("Liczba "+i);
@@ -28,5 +30,16 @@ public class Main {
             wpisane.add(wczytanaWartosc);
         }
         System.out.println("Wpisane "+wpisane);
+
+        //zapis listy która będzie zawierala elementy
+        // ktore powtarzają się w wpisane i wylosowane
+        List<Integer> trafione =new LinkedList<>();
+        for(Integer wpisanaWartosc : wpisane){
+            if(wylosowane.contains(wpisanaWartosc)){
+                trafione.add(wpisanaWartosc);
+            }
+        }
+        System.out.println("Trafione" + trafione);
+
     }
 }
